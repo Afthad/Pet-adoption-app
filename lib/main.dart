@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       initialRoute: '/homeScreen',
    getPages: AppRouter.routes,
- // specify the fallback locale in case an invalid locale is selected.
 );
   }
 }
