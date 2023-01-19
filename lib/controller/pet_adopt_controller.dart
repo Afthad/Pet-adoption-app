@@ -8,11 +8,14 @@ class PetAdoptController extends GetxController {
   @override
   onInit() {
     super.onInit();
+    isLoading.value=true;
     setTheme(null);
 
     getData();
     getSearchedData(' ');
+
     getAdopted();
+    isLoading.value=false;
   }
 
   void setTheme(bool? isDarkMode) {
@@ -51,11 +54,11 @@ class PetAdoptController extends GetxController {
   late PetDetails selectedPet;
 
   getData() {
-    isLoading.value = true;
+
     for (var a in petLis['PetDetails']) {
       petsList.add(PetDetails.fromJson(a));
     }
-    isLoading.value = false;
+
   }
 
   RxList<AdoptionModel> adoptedList = <AdoptionModel>[].obs;
